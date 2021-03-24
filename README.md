@@ -35,3 +35,23 @@ Some results will be like:
 <p align="center">
     <img width="100%" src="Figures/Fig4.png" style="max-width:100%;"></a>
 </p>
+
+
+Third, run the following scripts to get the simulation for the SPRT detector:
+```
+SPRT_s1.m
+SPRT_s2.m
+```
+Some results will be like:
+<img src="Figures/Fig5.png">
+
+
+Finally, one-channel EEG is availabe in the folder 'data', run the following scripts to test the detectors on real EEG data:
+```
+EEG_demo1.m
+EEG_demo1b.m
+```
+Some results will be like:
+<img src="Figures/Fig6.png">
+
+
