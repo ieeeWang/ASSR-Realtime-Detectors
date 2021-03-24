@@ -12,7 +12,7 @@ git clone git@github.com:ieeeWang/ASSR-Realtime-Detectors.git
 ```
 
 
-In Matlab, under the download foler 'ASSR-Realtime-Detectors', run the following scripts to get the simulation for the NP detector:
+In Matlab, under the download foler 'ASSR-Realtime-Detectors', run the following scripts to get the simulation for the Neyman-Pearson detector:
 ```
 NP_detect_s1.m
 NP_detect_s2.m
@@ -24,5 +24,14 @@ Some results will be like:
 </p>
 
 <p align="center">
-    <img width="100%" src="Figures/Fig3.pdf" style="max-width:100%;"></a>
+    <img width="100%" src="Figures/Fig3.png" style="max-width:100%;"></a>
+</p>
+
+Second, run the following scripts to get the simulation for the Bayes-factor detector:
+```
+BF_detect_s1.m
+```
+Some results will be like:
+<p align="center">
+    <img width="100%" src="Figures/Fig4.png" style="max-width:100%;"></a>
 </p>
