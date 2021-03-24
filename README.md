@@ -46,7 +46,7 @@ Some results will be like:
 <img src="Figures/Fig5.png">
 
 
-Finally, one-channel EEG is availabe in the folder 'data', run the following scripts to test the detectors on real EEG data:
+The real EEG data (one-channel on FCz) is availabe in the folder 'data', run the following scripts to test the detectors:
 ```
 EEG_demo1.m
 EEG_demo1b.m
@@ -55,3 +55,10 @@ Some results will be like:
 <img src="Figures/Fig6.png">
 
 
+Finally, performance evaluation can be done by run:
+```
+plot_ROC_PR_curves.m
+plot_boxplot_trialNo.m
+```
+Some results will be like:
+<img src="Figures/Fig7.png">
