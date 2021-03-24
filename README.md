@@ -1,5 +1,6 @@
 # ASSR-Realtime-Detectors
 Matlab scripts for the paper, Towards real-time detection of auditory steady-state responses: a comparative study.
+Paper will be available soon.
 
 <p align="center">
     <img width="200%" src="Figures/Fig1.png" style="max-width:200%;"></a>
