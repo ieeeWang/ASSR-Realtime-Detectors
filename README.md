@@ -20,7 +20,7 @@ NP_detect_s2.m
 Some results will be like:
 
 <p align="center">
-    <img width="50%" src="Figures/Fig2.png" style="max-width:50%;"></a>
+    <img width="100%" src="Figures/Fig2.png" style="max-width:50%;"></a>
 </p>
 
 <p align="center">
