@@ -23,3 +23,6 @@ Some results will be like:
     <img width="100%" src="Figures/Fig2.png" style="max-width:100%;"></a>
 </p>
 
+<p align="center">
+    <img width="100%" src="Figures/Fig3.pdf" style="max-width:100%;"></a>
+</p>
