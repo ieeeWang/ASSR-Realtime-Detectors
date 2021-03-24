@@ -55,7 +55,7 @@ Some results will be like:
 <img src="Figures/Fig6.png">
 
 
-Finally, performance evaluation can be done by run:
+Finally, performance evaluation can be done by run (using saved intermediate results in the folder 'data'):
 ```
 plot_ROC_PR_curves.m
 plot_boxplot_trialNo.m
