@@ -51,7 +51,7 @@ subplot(212)
     grid on
     xlabel('# trials', 'FontSize', fsize)
     ylabel('P_D', 'FontSize', fsize)
-    title('SPRT', 'FontSize', fsize)
+    title('modified SPRT', 'FontSize', fsize)
     
 
 

@@ -2,6 +2,10 @@ clc; clear; close all;
 % 'Towards real-time detection of auditory steady-state responses: a
 % comparative study' -- simulation of SPRT detector 
 
+% add path for functions
+utility_dir = '.\utility\';
+addpath(genpath(utility_dir));
+
 %% a set of SNRs
 M = 12;
 SNRdB = [5, 0, -5, -10]; % dB
@@ -51,7 +55,7 @@ figure
     ylim([-5 20])
     legend (legendtxt, 'Location','northwest','NumColumns',2)
     ylabel('LLR', 'FontSize', fsize)
-    title('SPRT', 'FontSize', fsize) 
+    title('modified SPRT', 'FontSize', fsize) 
     
     subplot(212) 
     semilogx(Nt, SNR_ML_step, 'LineWidth', LW);hold on

@@ -2,6 +2,10 @@ clc; clear; close all;
 % 'Towards real-time detection of auditory steady-state responses: a
 % comparative study' -- simulation of NP detector 
 
+% add path for functions
+utility_dir = '.\utility\';
+addpath(genpath(utility_dir));
+
 %% same with the paper M = 12;
 SNRdB = linspace(-30,20,51); 
 % from dB to power ratio ( SNR = signal power/noise power)
@@ -75,8 +79,8 @@ c3 = [0.9290, 0.6940, 0.1250];
 c4 = [0.4940, 0.1840, 0.5560];
 mycolor = {c1,c2,c3,c4};% = default color in order;
 
-legendtext1a = {'F_{M_1}','F_{M_2}','F_{M_3}','F_{M_4}'};
-legendtext1b = {'Crit_1 (M_1=4)','Crit_2 (M_2=6)','Crit_3 (M_3=12)','Crit_4 (M_4=24)'};
+legendtext1a = {'M_1=4','M_2=6','M_3=12','M_4=24'};
+legendtext1b = {'NP_c_r_i_t_1 ','NP_c_r_i_t_2','NP_c_r_i_t_3','NP_c_r_i_t_4'};
 
 legendtext2a = {'theory (M_1)','theory (M_2)','theory (M_3)','theory (M_4)'};
 legendtext2b = {'simulation (M_1)','simulation (M_2)','simulation (M_3)','simulation (M_4)'};

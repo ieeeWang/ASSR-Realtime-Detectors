@@ -2,9 +2,14 @@ clc; clear; close all;
 % 'Towards real-time detection of auditory steady-state responses: a
 % comparative study' -- simulation of NP detector 
 % plot contour of Pd (i.e., function of trial number and SNR)
+
+% add path for functions
+utility_dir = '.\utility\';
+addpath(genpath(utility_dir));
+
 %%
-% Ntrials = linspace(1,10001,10001); % 386 s
-Ntrials = linspace(1,1001,1001); % 34 s
+Ntrials = linspace(1,10001,10001); % 386 s
+% Ntrials = linspace(1,1001,1001); % 34 s
 
 % SNRdB = linspace(-30,10,5); % every 10 dB
 % SNRdB = linspace(-30,10,9); % every 5 dB

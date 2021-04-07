@@ -26,12 +26,13 @@ load([result_dir,'output3_NP_BF_05.mat']) % alpha = 0.05
 outputset1 = outputset;
 
 FdBmax=[];FdBend=[];
-ACmax=[];ACend=[];
+ACmax=[];ACend=[]; PDmax =[];
 for j = 1:length(outputset1)
     FdBmax(j,:) = outputset1{j}.FdB_max;
     FdBend(j,:) = outputset1{j}.FdB_end;   
     ACmax(j,:) = outputset1{j}.AC_max;
     ACend(j,:) = outputset1{j}.AC_end;
+    PDmax(j,:) = outputset1{j}.PD_max;
 end
 
 % load([result_dir,'output3_SPRT_01.mat']) % alpha = 0.01
@@ -189,13 +190,50 @@ figure
     box on
     grid on
 
+% return
+%% plot PD, AC (m, std)
+% PDmax [9*100]
+PD_O2 = PDmax(:,[1,2]); PD_O2 = reshape(PD_O2,1,[]);
+PD_O4 = PDmax(:,[3:6]); PD_O4 = reshape(PD_O4,1,[]);
+PD_O6 = PDmax(:,[7:12]); PD_O6 = reshape(PD_O6,1,[]);
+PD_80 = PDmax(:,5);
+PD_49 = PDmax(:,8);
+
+PD_mean = [mean(PD_O2), mean(PD_O4), mean(PD_O6), mean(PD_80), mean(PD_49)];
+PD_sd = [std(PD_O2,1), std(PD_O4,1), std(PD_O6,1), std(PD_80,1), std(PD_49,1)];
+
+% ACmax [9*100]
+AC_O2 = ACmax(:,[1,2]); AC_O2 = reshape(AC_O2,1,[]);
+AC_O4 = ACmax(:,[3:6]); AC_O4 = reshape(AC_O4,1,[]);
+AC_O6 = ACmax(:,[7:12]); AC_O6 = reshape(AC_O6,1,[]);
+AC_80 = ACmax(:,5);
+AC_49 = ACmax(:,8);
+
+AC_mean = [mean(AC_O2), mean(AC_O4), mean(AC_O6), mean(AC_80), mean(AC_49)];
+AC_sd = [std(AC_O2,1), std(AC_O4,1), std(AC_O6,1), std(AC_80,1), std(AC_49,1)];
 
 
+%% multiple bars plot
+tmp_avg=[PD_mean; AC_mean]; %[groups*bars]
+tmp_sd=[PD_sd; AC_sd];
 
-
-
-
-
-
+figure
+fsize = 12;
+    numgroups = size(tmp_avg,1);  
+    numbars = size(tmp_avg,2);  
+    h = bar(tmp_avg);
+    set(h,'BarWidth',0.8);    % The bars will now touch each other
+    hold on;
+    groupwidth = min(0.8, numbars/(numbars+1.5));
+    for i = 1:numbars
+          % Aligning error bar with individual bar
+          x = (1:numgroups) - groupwidth/2 + (2*i-1) * groupwidth / (2*numbars);  
+          errorbar(x, tmp_avg(:,i), tmp_sd(:,i), 'k', 'linestyle', 'none');
+    end
+    legend({'Order 2','Order 4','Order 6','80 Hz','49 Hz'},'Location','SouthEast')
+    set(gca,'Xtick',[1:2],'XTickLabel',{'P_D (NP)','AC (BF)'});
+    set(gca,'ygrid','on')
+%     xlabel('Groups','FontSize',fsize); 
+    ylabel('Probability','FontSize',fsize);
 
 
